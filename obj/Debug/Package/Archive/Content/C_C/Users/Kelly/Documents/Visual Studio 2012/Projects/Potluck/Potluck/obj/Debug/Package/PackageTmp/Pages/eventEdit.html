@@ -1,0 +1,64 @@
+﻿<div class="page-header">
+    <h1>Potluck <small>an event planning application</small></h1>
+</div>
+
+<h2>{{action}} Event</h2>
+
+<form name="form" class="form-horizontal" role="form">
+
+    <div class="form-group" ng-class="{error: form.eventName.$invalid}">
+        <label class="col-sm-2 control-label" for="eventName">Event name</label>
+        <div class="controls col-sm-10">
+            <input type="text" ng-model="anEvent.eventName" required id="eventName" name="eventName" placeholder="Company Holiday Fest">
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{error: form.eventDate.$invalid}">
+        <label class="col-sm-2 control-label" for="eventDate">Date</label>
+        <div class="controls col-sm-10">
+            <input type="datetime" ng-model="anEvent.eventDate" required id="Datetime1" name="eventDate" placeholder="mm/dd/yyyy">
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{error: form.eventStreetAddr.$invalid}">
+        <label class="col-sm-2 control-label" for="eventStreetAddr">Street address</label>
+        <div class="controls col-sm-10">
+            <input type="text" ng-model="anEvent.eventStreetAddr" required id="eventStreetAddr" name="eventStreetAddr" placeholder="100 Main St.">
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{error: form.eventCity.$invalid}">
+        <label class="col-sm-2 control-label" for="eventCity">City</label>
+        <div class="controls col-sm-10">
+            <input type="text" ng-model="anEvent.eventCity" required id="eventCity" name="eventCity" placeholder="Denver">
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{error: form.eventState.$invalid}">
+        <label class="col-sm-2 control-label" for="eventState">State</label>
+        <div class="controls col-sm-10">
+            <input type="text" ng-model="anEvent.eventState" required id="eventState" name="eventState" placeholder="Colorado">
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{error: form.eventZip.$invalid}">
+        <label class="col-sm-2 control-label" for="eventZip">ZIP code</label>
+        <div class="controls col-sm-10">
+            <!--<input type="text" ng-model="item.eventZip" id="eventZip" name="eventZip" placeholder="ZIP code">-->
+            <!--<input type="text" ng-model="anEvent.eventZip" required ng-minlength="5" ng-maxlength="5" id="eventZip" name="eventZip" placeholder="ZIP code">-->
+            <!--<input type="text" ng-model="anEvent.eventZip" required ng-minlength="5" ng-maxlength="5" ng-pattern="[0-9]" id="eventZip" name="eventZip" placeholder="ZIP code">-->
+            <!--<input type="text" ng-model="anEvent.eventZip" pattern="[0-9]+" ng-pattern-restrict id="eventZip" name="eventZip" placeholder="80247">-->
+            <input type="text" ng-model="anEvent.eventZip"  ng-pattern="/\d{5}/" ng-pattern-restrict ng-maxlength="5" id="eventZip" name="eventZip" placeholder="80247">
+            <!--<span class="error" ng-show="myForm.eventZip.$error.minlength">ZIP code must be 5 digits</span>-->
+            <span class="error" ng-show="form.eventZip.$error">ZIP code must be 5 digits</span>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button ng-click="save()" class="btn btn-primary">{{action}}</button>
+            <a href="#/" class="btn">Cancel</a>
+        </div>
+    </div>
+
+</form>

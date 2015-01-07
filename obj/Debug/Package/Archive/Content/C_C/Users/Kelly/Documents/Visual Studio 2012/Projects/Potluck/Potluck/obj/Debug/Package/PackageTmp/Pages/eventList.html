@@ -1,0 +1,34 @@
+﻿<!--<input type="text" ng-model="test" />
+<h1>Hello: {{test}}</h1>-->
+
+<div class="page-header">
+    <h1>Potluck <small>an event planning application</small></h1>
+</div>
+
+<table class="table table-striped table-condensed table-hover">
+    <thead>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZIP</th>
+        <th>
+            <a href="#/event/update"><i class="glyphicon glyphicon-plus"></i></a>
+        </th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="event in events" id="event_{{event.eventId}}">
+            <div class="form-actions">
+                    <td><a href="#/eventMenu/{{event.eventId}}" class="btn">{{event.eventName}}</a></td>
+            </div>
+            <td>{{event.eventDate | date:mediumDate}}</td>
+            <td>{{event.eventStreetAddr}}</td>
+            <td>{{event.eventCity}}</td>
+            <td>{{event.eventState}}</td>
+            <td>{{event.eventZip}}</td>
+            <td><a href="#/edit/{{event.eventId}}"><i class="glyphicon glyphicon-edit"></i></a></td>
+            <td><a ng-click="delete()"><i class="glyphicon glyphicon-remove"></i></a></td>
+        </tr>
+    </tbody>
+</table>

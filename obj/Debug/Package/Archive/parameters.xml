@@ -1,0 +1,9 @@
+﻿<parameters>
+  <parameter name="IIS Web Application Name" defaultValue="Default Web Site/Potluck_deploy" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\PL\\Potluck\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\PL\\Potluck\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="PotluckContext-Web.config Connection String" description="PotluckContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=sql-potluckdb.chnzb0v4gqw1.us-west-2.rds.amazonaws.com;Initial Catalog=PotluckDB;User Id=potluckuser; Password=wordswas;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\PL\\Potluck\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PotluckContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,27 @@
+﻿<div class="page-header">
+    <h1>Potluck <small>an event planning application</small></h1>
+</div>
+
+<h2>{{action}} {{menuOrSupply}}</h2>
+
+<form name="form" class="form-horizontal" role="form">
+    <div class="form-group" ng-class="{error: form.itemName.$invalid}">
+        <label class="col-sm-2 control-label" for="itemName">Item name</label>
+        <div class="controls col-sm-10">
+            <input type="text" ng-model="menu.itemName" required id="itemName" name="itemName" placeholder="Potato salad">
+        </div>
+    </div>
+    <div class="form-group" ng-class="{error: form.isMenuItem.$invalid}">
+        <label class="col-sm-2 control-label" for="isMenuItem">Check box if item is for the menu</label>
+        <div class="controls col-sm-10">
+            <input type="hidden"   ng-model="menu.isMenuItem" id="isMenuItem" name="isMenuItem" value="false">
+            <input type="checkbox" ng-model="menu.isMenuItem" id="Checkbox1" name="isMenuItem" value="true">
+        </div>
+    </div>
+    <div class="form-actions">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button ng-click="save()" class="btn btn-primary">{{action}}</button>
+            <a href="#/eventMenu/{{eventNumber}}" class="btn">Cancel</a>
+        </div>
+    </div>
+</form>
